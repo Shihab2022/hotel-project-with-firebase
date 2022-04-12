@@ -67,10 +67,10 @@ const Register = () => {
           CONTINUE WITH GOOGLE
         </button>
         <p style={{ textAlign: "center" }}>
-          New to Ema-John ?
-          <Link style={{ color: "red", textDecoration: "none" }} to="/signIn:id">
+        Already Have an account ?
+          <Link style={{ color: "red", textDecoration: "none" }} to="/signIn">
             {" "}
-            Create new account
+            Login
           </Link>{" "}
         </p>
       </div>

@@ -55,8 +55,8 @@ const SingIn = () => {
           <br />
           <input onBlur={handlePassword} type="password" required />
           <p>{loading ? "Please wait..." : ""}</p>
-          <p style={{color:'red'}}>{error?.message}</p>
-          <input type="submit" className="submit-btn" value="SUBMIT" />
+          <p style={{color:'red'}}>{error?.message + 'Please Create an account'}</p>
+          <input type="submit" className="submit-btn" value="LOGIN" />
         </form>
       </div>
       <button onClick={handleWidthGoogle} className="google-btn">
