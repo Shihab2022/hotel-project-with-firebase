@@ -1,0 +1,13 @@
+.hotel-header{
+    padding:8px 50px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background-color:lavender;
+}
+.hotel-navbar a{
+   margin-left:50px;
+   text-decoration:none;
+   font-weight:bold;
+   font-size: 25px;
+}
