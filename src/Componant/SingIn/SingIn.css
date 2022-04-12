@@ -1,0 +1,27 @@
+.form-container{
+    margin:0 auto;
+    width:40%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:10px 20px;
+    border-radius:10px;
+    box-shadow: 10px 10px 10px rgba(100,255,150,.5);
+}
+.form-container input{
+    width:500px;
+    padding:10px 15px;
+   margin:10px 0;
+   font-size:20px;
+   border-radius:2px;
+
+}
+.form-container label{
+    font-size:20px;
+}
+.form-title{
+    font-size:20px;
+    text-align:center;
+    font-weight:bold;
+    color:goldenrod;
+}
