@@ -1,9 +1,14 @@
-.form-container{
-    margin:0 auto;
-    width:40%;
+.form-body{
+   
     display:flex;
     justify-content:center;
     align-items:center;
+  
+    
+}
+.form-container{
+    margin:0 auto;
+    width:40%;
     padding:10px 20px;
     border-radius:10px;
     box-shadow: 10px 10px 10px rgba(100,255,150,.5);
@@ -20,8 +25,13 @@
     font-size:20px;
 }
 .form-title{
-    font-size:20px;
+    font-size:25px;
     text-align:center;
     font-weight:bold;
     color:goldenrod;
+}
+.submit-btn{
+   background-color:khaki;
+   padding:12px 18px;
+
 }
