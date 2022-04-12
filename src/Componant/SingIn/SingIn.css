@@ -35,3 +35,10 @@
    padding:12px 18px;
 
 }
+.google-btn{
+    margin: 20px 0 10px 170px;
+    font-size:20px;
+    padding:15px 25px;
+    background-color:moccasin;
+    border:none !important;
+}
