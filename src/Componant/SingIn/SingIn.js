@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./SingIn.css";
 import {
-  useCreateUserWithEmailAndPassword,
+  useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
@@ -15,8 +15,12 @@ const SingIn = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-  const [createUserWithEmailAndPassword, user, loading, error] =
-    useCreateUserWithEmailAndPassword(auth);
+  const [
+    signInWithEmailAndPassword,
+    user,
+    loading,
+    error,
+  ] = useSignInWithEmailAndPassword(auth);
   const [signInWithGoogle] = useSignInWithGoogle(auth);
 
   const handleEmail = (e) => {
@@ -29,11 +33,12 @@ const SingIn = () => {
 
   const handelSubmit = (e) => {
     e.preventDefault();
-    createUserWithEmailAndPassword(email, password);
+    signInWithEmailAndPassword(email, password);
   };
   const handleWidthGoogle = () => {
     signInWithGoogle();
   };
+  console.log(user)
   if (user) {
     navigate(from, { replace: true });
   }
@@ -50,7 +55,7 @@ const SingIn = () => {
           <br />
           <input onBlur={handlePassword} type="password" required />
           <p>{loading ? "Please wait..." : ""}</p>
-          <p>{error?.message}</p>
+          <p style={{color:'red'}}>{error?.message}</p>
           <input type="submit" className="submit-btn" value="SUBMIT" />
         </form>
       </div>
