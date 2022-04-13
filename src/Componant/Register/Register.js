@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import GoogleSign from '../GoogleSign/GoogleSign';
 
 const Register = () => {
     const [email, setEmail] = useState("");
@@ -14,7 +15,7 @@ const Register = () => {
   
     const [createUserWithEmailAndPassword, user, loading, error] =
       useCreateUserWithEmailAndPassword(auth);
-    const [signInWithGoogle] = useSignInWithGoogle(auth);
+
   
     const handleEmail = (e) => {
       setEmail(e.target.value);
@@ -35,18 +36,18 @@ const Register = () => {
       }
       createUserWithEmailAndPassword(email, password);
     };
-    const handleWidthGoogle = () => {
-      signInWithGoogle();
-    };
+  
     console.log(user);
     if (user) {
       navigate(from, { replace: true });
     }
     return (
+      <div className='hello'>
         <div className="form-container">
-        <h1 className="form-title">Create Account</h1>
+       
         <div className="form-body">
           <form onSubmit={handelSubmit}>
+          <h1 className="form-title">Create Account</h1>
             <div>
               <label htmlFor="Enter your email">Enter your email</label> <br />
               <input onBlur={handleEmail} type="email" required />
@@ -63,9 +64,7 @@ const Register = () => {
             <input type="submit" className="submit-btn" value="SUBMIT" />
           </form>
         </div>
-        <button onClick={handleWidthGoogle} className="google-btn">
-          CONTINUE WITH GOOGLE
-        </button>
+   
         <p style={{ textAlign: "center" }}>
         Already Have an account ?
           <Link style={{ color: "red", textDecoration: "none" }} to="/signIn">
@@ -73,6 +72,8 @@ const Register = () => {
             Login
           </Link>{" "}
         </p>
+        <GoogleSign></GoogleSign>
+      </div>
       </div>
     );
 };

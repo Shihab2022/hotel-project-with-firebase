@@ -1,17 +1,15 @@
-.form-body{
-   
+
+.hello{
     display:flex;
     justify-content:center;
     align-items:center;
-  
-    
+    margin-top:35px;
 }
 .form-container{
-    margin:0 auto;
     width:40%;
     padding:10px 20px;
     border-radius:10px;
-    box-shadow: 10px 10px 10px rgba(100,255,150,.5);
+    box-shadow: 13px 15px 10px 15px rgba(100,255,150,.5);
 }
 .form-container input{
     width:500px;

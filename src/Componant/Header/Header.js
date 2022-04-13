@@ -16,7 +16,10 @@ const Header = () => {
       <div className="hotel-navbar">
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        <Link to="/bookingRooms">Booking</Link>
+        {
+          user? <Link to='/bookingRooms'>Booking</Link> :<Link to='/signIn'>Booking</Link>
+        }
+        {/* <Link to="/bookingRooms">Booking</Link> */}
 
         {
          user ?  <Link onClick={logout} to="/signIn">Sign Out</Link> :<Link to="/signIn">Sign In</Link>  
